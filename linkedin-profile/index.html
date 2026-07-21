@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nethu Jayakody — LinkedIn Profile Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1c2421;
+      --ink-soft: #3d4a45;
+      --muted: #6b7872;
+      --paper: #f3efe6;
+      --paper-2: #ebe5d8;
+      --sage: #5f8a78;
+      --sage-deep: #3f6456;
+      --accent: #c45c26;
+      --line: rgba(28, 36, 33, 0.12);
+      --shadow: 0 18px 50px rgba(28, 36, 33, 0.08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Outfit", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 80% 50% at 10% -10%, rgba(95, 138, 120, 0.22), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 90% 5%, rgba(196, 92, 38, 0.12), transparent 50%),
+        linear-gradient(180deg, var(--paper) 0%, #e7e1d4 100%);
+      min-height: 100vh;
+      line-height: 1.55;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      background-image:
+        linear-gradient(rgba(28, 36, 33, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(28, 36, 33, 0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(180deg, #000 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: min(1080px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2.5rem 0 5rem;
+    }
+
+    /* —— Hero —— */
+    .hero {
+      display: grid;
+      gap: 1.75rem;
+      padding: 2.5rem 0 3rem;
+      animation: rise 0.8s ease both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage-deep);
+      font-weight: 500;
+    }
+
+    .brand {
+      font-family: "Fraunces", serif;
+      font-weight: 650;
+      font-size: clamp(2.6rem, 7vw, 4.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      max-width: 12ch;
+    }
+
+    .lede {
+      max-width: 36rem;
+      font-size: 1.125rem;
+      color: var(--ink-soft);
+      font-weight: 300;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn {
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 500;
+      border-radius: 999px;
+      padding: 0.85rem 1.35rem;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .btn-primary:hover { background: var(--sage-deep); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    .btn-ghost:hover { background: rgba(255, 255, 255, 0.45); }
+
+    /* —— Preview mock —— */
+    .preview {
+      margin: 0.5rem 0 3rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+      background: #fff;
+      animation: rise 0.9s 0.12s ease both;
+    }
+
+    .banner {
+      height: 140px;
+      background:
+        linear-gradient(120deg, rgba(63, 100, 86, 0.92), rgba(95, 138, 120, 0.75) 45%, rgba(243, 239, 230, 0.3)),
+        repeating-linear-gradient(
+          -12deg,
+          transparent,
+          transparent 18px,
+          rgba(255, 255, 255, 0.07) 18px,
+          rgba(255, 255, 255, 0.07) 19px
+        );
+      position: relative;
+    }
+
+    .banner-label {
+      position: absolute;
+      left: 1.5rem;
+      bottom: 1.15rem;
+      color: #f7f4ef;
+      font-family: "Fraunces", serif;
+      font-size: 1.35rem;
+      line-height: 1.2;
+    }
+
+    .banner-label span {
+      display: block;
+      font-family: "Outfit", sans-serif;
+      font-size: 0.78rem;
+      opacity: 0.85;
+      letter-spacing: 0.04em;
+      margin-top: 0.2rem;
+    }
+
+    .preview-body {
+      padding: 0 1.5rem 1.75rem;
+      position: relative;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin-top: -48px;
+      background:
+        linear-gradient(145deg, #d7e3dc, #a8c4b6);
+      display: grid;
+      place-items: center;
+      font-family: "Fraunces", serif;
+      font-size: 1.75rem;
+      color: var(--sage-deep);
+      box-shadow: 0 4px 16px rgba(28, 36, 33, 0.12);
+    }
+
+    .preview-name {
+      font-family: "Fraunces", serif;
+      font-size: 1.55rem;
+      margin-top: 0.75rem;
+      font-weight: 650;
+    }
+
+    .preview-headline {
+      color: var(--ink-soft);
+      margin-top: 0.25rem;
+      max-width: 40rem;
+    }
+
+    .preview-meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 0.45rem;
+    }
+
+    /* —— Sections —— */
+    .section {
+      margin-bottom: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(8px);
+      overflow: hidden;
+      animation: rise 0.7s ease both;
+    }
+
+    .section:nth-child(1) { animation-delay: 0.15s; }
+    .section:nth-child(2) { animation-delay: 0.2s; }
+    .section:nth-child(3) { animation-delay: 0.25s; }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.15rem 1.35rem;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .section-head h2 {
+      font-family: "Fraunces", serif;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+
+    .section-head .hint {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .section-body {
+      padding: 1.25rem 1.35rem 1.5rem;
+      display: none;
+    }
+
+    .section.open .section-body { display: block; }
+
+    .section.open .chevron { transform: rotate(180deg); }
+
+    .chevron {
+      transition: transform 0.25s ease;
+      color: var(--sage-deep);
+      font-size: 1.1rem;
+    }
+
+    .block {
+      margin-bottom: 1.35rem;
+    }
+
+    .block:last-child { margin-bottom: 0; }
+
+    .block-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .block-label h3 {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sage-deep);
+      font-weight: 600;
+    }
+
+    .copy-btn {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+
+    .copy-btn.copied {
+      background: var(--sage);
+      border-color: var(--sage);
+      color: #fff;
+    }
+
+    .copy-box {
+      width: 100%;
+      font: inherit;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      resize: vertical;
+      min-height: 4.5rem;
+    }
+
+    .copy-box:focus {
+      outline: 2px solid rgba(95, 138, 120, 0.45);
+      outline-offset: 1px;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.55rem;
+    }
+
+    .checklist {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      padding: 0.65rem 0.8rem;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid var(--line);
+    }
+
+    .checklist input {
+      margin-top: 0.2rem;
+      accent-color: var(--sage-deep);
+      width: 1.05rem;
+      height: 1.05rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .skill {
+      font-size: 0.88rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 8px;
+      background: rgba(95, 138, 120, 0.12);
+      color: var(--sage-deep);
+      border: 1px solid rgba(95, 138, 120, 0.2);
+    }
+
+    .skill.pin {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+
+    .links {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .links a {
+      color: var(--sage-deep);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .links a:hover { border-bottom-color: var(--sage); }
+
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    footer a { color: var(--sage-deep); }
+
+    .toast {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      z-index: 20;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (max-width: 640px) {
+      .banner { height: 110px; }
+      .avatar { width: 80px; height: 80px; margin-top: -40px; font-size: 1.4rem; }
+      .section-head { flex-wrap: wrap; }
+      .block-label { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <p class="eyebrow">LinkedIn profile kit</p>
+      <h1 class="brand">Nethu Jayakody</h1>
+      <p class="lede">
+        Ready-to-paste copy for a strong UI/UX designer profile — headline, About,
+        experience, skills, and a first post. Open a section, copy, paste into LinkedIn.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#kit">Start with headline</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/nethu-jayakody-0962b7165" target="_blank" rel="noopener">Open your LinkedIn</a>
+      </div>
+    </header>
+
+    <div class="preview" aria-hidden="true">
+      <div class="banner">
+        <div class="banner-label">
+          Nethu Jayakody
+          <span>UI/UX Designer · Frontend</span>
+        </div>
+      </div>
+      <div class="preview-body">
+        <div class="avatar">NJ</div>
+        <h2 class="preview-name">Nethu Jayakody</h2>
+        <p class="preview-headline" id="live-headline">
+          UI/UX Designer | Software Engineering Undergraduate | Frontend &amp; Mobile Enthusiast
+        </p>
+        <p class="preview-meta">NSBM Green University · Gampaha, Sri Lanka</p>
+      </div>
+    </div>
+
+    <div id="kit">
+      <article class="section open" data-section>
+        <div class="section-head" data-toggle>
+          <div>
+            <h2>Headline &amp; About</h2>
+            <p class="hint">The first things recruiters read</p>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="section-body">
+          <div class="block">
+            <div class="block-label">
+              <h3>Recommended headline</h3>
+              <button type="button" class="copy-btn" data-copy="headline">Copy</button>
+            </div>
+            <textarea class="copy-box" id="headline" rows="2">UI/UX Designer | Software Engineering Undergraduate | Frontend & Mobile Enthusiast</textarea>
+            <p class="note">Alt: “UI/UX Designer crafting clean, user-centered digital experiences | Frontend · Flutter · React”</p>
+          </div>
+          <div class="block">
+            <div class="block-label">
+              <h3>About</h3>
+              <button type="button" class="copy-btn" data-copy="about">Copy</button>
+            </div>
+            <textarea class="copy-box" id="about" rows="14">Hi, I’m Nethu — a Software Engineering undergraduate at NSBM Green University and a UI/UX designer who loves turning ideas into clean, usable interfaces.
+
+I design and build digital products end to end: research and wireframes in Figma, then responsive frontends with HTML, CSS, JavaScript, React, and Bootstrap. I’m also exploring Flutter and React Native to bring the same care to mobile experiences.
+
+Selected work:
+• Bake & Bliss — designed and developed a live portfolio site for a cake business (bakeandbliss.live)
+• Restaurant Management System — UI + frontend for a full-stack inventory and order platform (React + Spring Boot)
+• TalentAI — frontend for an AI-assisted recruitment platform (React + Vite)
+
+I care about clarity, accessibility, and interfaces that feel effortless. Always learning, always refining.
+
+Open to internships, freelance UI/UX work, and collaborations. Let’s connect — I’d love to hear what you’re building.</textarea>
+          </div>
+        </div>
+      </article>
+
+      <article class="section" data-section>
+        <div class="section-head" data-toggle>
+          <div>
+            <h2>Experience &amp; education</h2>
+            <p class="hint">Replace [dates] with your real months/years</p>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="section-body">
+          <div class="block">
+            <div class="block-label">
+              <h3>Bake &amp; Bliss — UI/UX &amp; Frontend</h3>
+              <button type="button" class="copy-btn" data-copy="exp-bake">Copy</button>
+            </div>
+            <textarea class="copy-box" id="exp-bake" rows="8">Designed and developed the live marketing site for Bake & Bliss, a cake-making business.
+
+• Created a clean, modern UI focused on showcasing cake designs and services
+• Built a fully responsive frontend (HTML, CSS, Bootstrap, Tailwind, JavaScript)
+• Deployed and hosted the site at bakeandbliss.live
+• Improved the business’s online presence with clear navigation and fast-loading pages</textarea>
+            <p class="note">Title: UI/UX Designer & Frontend Developer · Self-employed · Link: http://bakeandbliss.live/</p>
+          </div>
+          <div class="block">
+            <div class="block-label">
+              <h3>Restaurant Management System</h3>
+              <button type="button" class="copy-btn" data-copy="exp-rms">Copy</button>
+            </div>
+            <textarea class="copy-box" id="exp-rms" rows="7">Contributed UI/UX and frontend work to a full-stack restaurant management platform (React + Spring Boot + MySQL).
+
+• Designed role-aware dashboards for Admin, Manager, Cashier, and Chef
+• Built responsive interfaces for inventory, orders, and analytics
+• Focused on clear workflows for stock tracking, low-stock alerts, and order status</textarea>
+          </div>
+          <div class="block">
+            <div class="block-label">
+              <h3>TalentAI</h3>
+              <button type="button" class="copy-btn" data-copy="exp-talent">Copy</button>
+            </div>
+            <textarea class="copy-box" id="exp-talent" rows="6">Built the React + Vite frontend for TalentAI, an AI-assisted recruitment platform.
+
+• Designed and implemented recruitment flows and UI components
+• Collaborated with an ASP.NET Core API backend
+• Prioritized a clear, usable hiring experience for recruiters and candidates</textarea>
+          </div>
+          <div class="block">
+            <div class="block-label">
+              <h3>Education</h3>
+              <button type="button" class="copy-btn" data-copy="education">Copy</button>
+            </div>
+            <textarea class="copy-box" id="education" rows="4">NSBM Green University
+Bachelor’s degree, Software Engineering
+[Start year] – [Expected graduation]
+
+Rathnavali Balika Vidyalaya – Gampaha (schooling completed)</textarea>
+          </div>
+        </div>
+      </article>
+
+      <article class="section" data-section>
+        <div class="section-head" data-toggle>
+          <div>
+            <h2>Skills, featured &amp; first post</h2>
+            <p class="hint">Pin skills · add links · publish once</p>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="section-body">
+          <div class="block">
+            <div class="block-label">
+              <h3>Skills to add (pin the dark ones)</h3>
+              <button type="button" class="copy-btn" data-copy="skills">Copy list</button>
+            </div>
+            <div class="skills" id="skills-visual" aria-hidden="true">
+              <span class="skill pin">UI/UX Design</span>
+              <span class="skill pin">Figma</span>
+              <span class="skill pin">User Interface Design</span>
+              <span class="skill pin">Wireframing</span>
+              <span class="skill pin">Prototyping</span>
+              <span class="skill">User Experience (UX)</span>
+              <span class="skill">Responsive Web Design</span>
+              <span class="skill">HTML5</span>
+              <span class="skill">CSS3</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">React.js</span>
+              <span class="skill">Bootstrap</span>
+              <span class="skill">Tailwind CSS</span>
+              <span class="skill">Flutter</span>
+              <span class="skill">Frontend Development</span>
+              <span class="skill">Git</span>
+            </div>
+            <textarea class="copy-box" id="skills" rows="3" hidden>UI/UX Design, Figma, User Interface Design, Wireframing, Prototyping, User Experience (UX), Responsive Web Design, HTML5, CSS3, JavaScript, React.js, Bootstrap, Tailwind CSS, Flutter, React Native, Frontend Development, Spring Boot, PHP, Python, Java, Git, GitHub</textarea>
+          </div>
+          <div class="block">
+            <div class="block-label"><h3>Featured links</h3></div>
+            <div class="links">
+              <a href="http://bakeandbliss.live/" target="_blank" rel="noopener">Bake &amp; Bliss — bakeandbliss.live</a>
+              <a href="https://github.com/NethumiJ/cake-shop-portfolio" target="_blank" rel="noopener">GitHub — cake-shop-portfolio</a>
+              <a href="https://github.com/NethumiJ/restaurant-management-system" target="_blank" rel="noopener">GitHub — restaurant-management-system</a>
+              <a href="https://github.com/NethumiJ/TalentAI" target="_blank" rel="noopener">GitHub — TalentAI</a>
+              <a href="https://github.com/NethumiJ" target="_blank" rel="noopener">GitHub profile — NethumiJ</a>
+            </div>
+          </div>
+          <div class="block">
+            <div class="block-label">
+              <h3>First LinkedIn post</h3>
+              <button type="button" class="copy-btn" data-copy="post">Copy</button>
+            </div>
+            <textarea class="copy-box" id="post" rows="12">I just refreshed my LinkedIn as a UI/UX designer ✨
+
+I’m Nethu — Software Engineering undergrad at NSBM, designing and building interfaces people can actually use.
+
+Recent work I’m proud of:
+🍰 Bake & Bliss — live business site I designed & developed → bakeandbliss.live
+🍽️ Restaurant Management System — role-based dashboards in React
+🤖 TalentAI — frontend for an AI recruitment platform
+
+If you’re hiring interns, need a UI/UX collaborator, or just want to talk design — say hi.
+
+#UIUX #Figma #Frontend #OpenToWork #NSBM</textarea>
+          </div>
+        </div>
+      </article>
+
+      <article class="section" data-section>
+        <div class="section-head" data-toggle>
+          <div>
+            <h2>Setup checklist</h2>
+            <p class="hint">Tick as you go — saved in this browser</p>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="section-body">
+          <ul class="checklist" id="checklist">
+            <li><label><input type="checkbox" data-check="photo" /> Profile photo uploaded</label></li>
+            <li><label><input type="checkbox" data-check="banner" /> Banner uploaded (1584×396)</label></li>
+            <li><label><input type="checkbox" data-check="headline" /> Headline set</label></li>
+            <li><label><input type="checkbox" data-check="about" /> About section pasted</label></li>
+            <li><label><input type="checkbox" data-check="exp" /> Experience &amp; education added</label></li>
+            <li><label><input type="checkbox" data-check="projects" /> Projects + links added</label></li>
+            <li><label><input type="checkbox" data-check="skills" /> Skills added &amp; pinned</label></li>
+            <li><label><input type="checkbox" data-check="featured" /> Featured section filled</label></li>
+            <li><label><input type="checkbox" data-check="url" /> Custom URL reviewed</label></li>
+            <li><label><input type="checkbox" data-check="otw" /> Open to work preferences set</label></li>
+            <li><label><input type="checkbox" data-check="post" /> Intro post published</label></li>
+          </ul>
+          <p class="note" style="margin-top:1rem">
+            Banner tip: soft sage → warm paper, name on the left, keep the right side clear for mobile crop.
+            Full brief is in <code>COPY-PASTE.md</code>.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <footer>
+      <span>Built for Nethu Jayakody · UI/UX LinkedIn kit</span>
+      <span><a href="./COPY-PASTE.md">Full markdown guide</a></span>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status">Copied</div>
+
+  <script>
+    const toast = document.getElementById("toast");
+    let toastTimer;
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 1600);
+    }
+
+    document.querySelectorAll("[data-toggle]").forEach((head) => {
+      head.addEventListener("click", () => {
+        head.closest("[data-section]").classList.toggle("open");
+      });
+    });
+
+    document.querySelectorAll("[data-copy]").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const id = btn.getAttribute("data-copy");
+        const el = document.getElementById(id);
+        if (!el) return;
+        const text = el.value || el.textContent;
+        try {
+          await navigator.clipboard.writeText(text.trim());
+          btn.classList.add("copied");
+          btn.textContent = "Copied";
+          showToast("Copied to clipboard");
+          setTimeout(() => {
+            btn.classList.remove("copied");
+            btn.textContent = id === "skills" ? "Copy list" : "Copy";
+          }, 1400);
+        } catch {
+          el.select?.();
+          showToast("Select the text and copy manually");
+        }
+      });
+    });
+
+    const headline = document.getElementById("headline");
+    const live = document.getElementById("live-headline");
+    headline.addEventListener("input", () => {
+      live.textContent = headline.value;
+    });
+
+    const checklist = document.getElementById("checklist");
+    checklist.querySelectorAll("input[data-check]").forEach((input) => {
+      const key = "linkedin-kit-" + input.dataset.check;
+      input.checked = localStorage.getItem(key) === "1";
+      input.addEventListener("change", () => {
+        localStorage.setItem(key, input.checked ? "1" : "0");
+      });
+    });
+  </script>
+</body>
+</html>
