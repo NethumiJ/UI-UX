@@ -23,7 +23,7 @@ export const classes: CakeClass[] = [
     duration: '45 min',
     level: 'Beginner',
     image:
-      'https://images.unsplash.com/photo-1556910103-1c0216933a9a?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&w=1200&q=80',
     topics: ['Essential tools', 'Workspace setup', 'Safety & care', 'What to buy first'],
   },
   {
@@ -119,7 +119,7 @@ export const classes: CakeClass[] = [
     duration: '80 min',
     level: 'Intermediate',
     image:
-      'https://images.unsplash.com/photo-1464347654578-68b43fdb2061?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=1200&q=80',
     topics: ['Dowels & boards', 'Stacking', 'Weight balance', 'Transport tips'],
   },
   {
@@ -131,7 +131,7 @@ export const classes: CakeClass[] = [
     duration: '100 min',
     level: 'Advanced',
     image:
-      'https://images.unsplash.com/photo-1525259749750-c1c4d607b040?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1562440499-64c9a111f713?auto=format&fit=crop&w=1200&q=80',
     topics: ['Tier planning', 'Flavour pairing', 'Elegant décor', 'Delivery day'],
   },
   {
